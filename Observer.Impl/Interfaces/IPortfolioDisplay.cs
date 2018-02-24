@@ -8,6 +8,6 @@ namespace Observer.Impl.Interfaces
 {
     public interface IPortfolioDisplay
     {
-        void print( IPortfolio portefolie);
+        void Print( IPortfolio portefolie);
     }
 }
