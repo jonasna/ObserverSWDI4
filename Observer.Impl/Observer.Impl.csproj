@@ -48,7 +48,7 @@
     <Compile Include="Interfaces\IStock.cs" />
     <Compile Include="Ownstock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Subject.cs" />
+    <Compile Include="Interfaces\Subject.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
