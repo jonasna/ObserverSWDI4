@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Observer.Impl
 {
-    class IRandom
+    public interface IRandom
     {
+        int GenerateRandom(int min, int max);
     }
 }
