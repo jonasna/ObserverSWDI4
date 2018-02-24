@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using Observer.Impl.Interfaces;
@@ -9,36 +10,31 @@ namespace Observer.Impl
 {
     public class Stock : Subject, IStock
     {
+        private IRegulator _stockRegulator;
         Stock(string name, int value, IRegulator stockRegulator)
         {
-            try
-            {
-                Navn = name;
-                Value = value;
-                Notify();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            Navn = name;
+            Value = value;
+            _stockRegulator = stockRegulator;
         }
         public string Navn { get; }
         public int Value { get; private set; }
 
         public void DecreaseValue()
         {
-            try
-            {
-                Value = (int)(Value * 0.95);
-                Notify();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-           
+
+            Value = (int)(Value * 0.95);
+            Notify();
+        }
+
+        public void StartRegulate()
+        {
+            _stockRegulator.Start();
+        }
+
+        public void StopRegulate()
+        {
+            _stockRegulator.Stop();
         }
 
         public void IncreaseValue()
