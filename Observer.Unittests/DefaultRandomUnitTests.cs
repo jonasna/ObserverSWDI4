@@ -9,12 +9,13 @@ using NUnit.Framework;
 namespace Observer.Unittests
 {
     [TestFixture]
-    class DefaultRandomUnitTests
+    public class DefaultRandomUnitTests
     {
         [Test]
-        void DefaultRandom_ResultIsInRange0_10()
+        public void DefaultRandom_ResultIsInRange0_10()
         {
-            var uut = new DefaultRandom();
+            var uut = new DefaultRandom(0,10);
+            Assert.That(uut.GetResult, Is.GreaterThanOrEqualTo(0).And.LessThan(10));
         }
     }
 }
