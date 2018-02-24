@@ -40,12 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IObserver.cs" />
-    <Compile Include="IPortfolioDisplay.cs" />
-    <Compile Include="IPortfolio.cs" />
-    <Compile Include="IRandom.cs" />
-    <Compile Include="IRegulator.cs" />
-    <Compile Include="IStock.cs" />
+    <Compile Include="Interfaces\IObserver.cs" />
+    <Compile Include="Interfaces\IPortfolioDisplay.cs" />
+    <Compile Include="Interfaces\IPortfolio.cs" />
+    <Compile Include="Interfaces\IRandom.cs" />
+    <Compile Include="Interfaces\IRegulator.cs" />
+    <Compile Include="Interfaces\IStock.cs" />
     <Compile Include="Ownstock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Subject.cs" />
