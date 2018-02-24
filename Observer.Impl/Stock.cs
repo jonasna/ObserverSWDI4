@@ -10,8 +10,9 @@ namespace Observer.Impl
 {
     public class Stock : Subject, IStock
     {
-        private IRegulator _stockRegulator;
-        Stock(string name, int value, IRegulator stockRegulator)
+        private readonly IRegulator _stockRegulator;
+
+        public Stock(string name, int value, IRegulator stockRegulator)
         {
             Navn = name;
             Value = value;
@@ -22,8 +23,13 @@ namespace Observer.Impl
 
         public void DecreaseValue()
         {
-
             Value = (int)(Value * 0.95);
+            Notify();
+        }
+
+        public void IncreaseValue()
+        {
+            Value = (int)(Value * 1.05);
             Notify();
         }
 
@@ -52,21 +58,6 @@ namespace Observer.Impl
                 Console.WriteLine(e);
                 throw;
             }
-        }
-
-        public void IncreaseValue()
-        {
-            try
-            {
-                Value = (int)(Value * 1.05);
-                Notify();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-            
         }
     }
 }
