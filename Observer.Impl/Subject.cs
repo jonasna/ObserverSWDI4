@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Observer.Impl
 {
-    class Subject
+    public abstract class Subject
     {
+
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Observer.Impl
 {
-    class IObserver
+    public interface IObserver
     {
+
     }
 }
