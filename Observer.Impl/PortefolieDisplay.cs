@@ -9,10 +9,10 @@ namespace Observer.Impl
 {
     public class PortefolieDisplay : IPortfolioDisplay
     {
-        public void Print(List<Ownstock> mySOwnstocks)
+        public void Print(PorteFolio myPortefolio)
         {
             Console.WriteLine("Your portefolie includes the following stocks: ");
-            foreach (var item in mySOwnstocks)
+            foreach (var item in myPortefolio)
             {
                 Console.WriteLine("Name: " + item.Name + "\t Value: " + item.Value + "\t Amount: " + item.Amount );
             }
