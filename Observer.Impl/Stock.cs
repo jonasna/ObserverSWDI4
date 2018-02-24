@@ -16,11 +16,7 @@ namespace Observer.Impl
         {
             Navn = name;
             Value = value;
-            if (stockRegulator == null)
-            {
-                _stockRegulator = new StockRegulator(new DefaultRandom(1, 3), this);
-            }
-            else _stockRegulator = stockRegulator;
+            _stockRegulator = stockRegulator ?? new StockRegulator(new DefaultRandom(1, 3), this);
         }
 
         public string Navn { get; }
