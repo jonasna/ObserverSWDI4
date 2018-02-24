@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="DefaultRandomUnitTests.cs" />
     <Compile Include="ObserverTests.cs" />
+    <Compile Include="PortefolieDisplayUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StockTests.cs" />
   </ItemGroup>
