@@ -18,22 +18,23 @@ namespace Observer.Impl
             Value = value;
             if (stockRegulator == null)
             {
-                _stockRegulator = new StockRegulator(new DefaultRandom(1,3), this);
+                _stockRegulator = new StockRegulator(new DefaultRandom(1, 3), this);
             }
             else _stockRegulator = stockRegulator;
         }
+
         public string Navn { get; }
         public int Value { get; private set; }
 
         public void DecreaseValue()
         {
-            Value = (int)(Value * 0.95);
+            Value = (int) (Value * 0.95);
             Notify();
         }
 
         public void IncreaseValue()
         {
-            Value = (int)(Value * 1.05);
+            Value = (int) (Value * 1.05);
             Notify();
         }
 
@@ -48,7 +49,6 @@ namespace Observer.Impl
                 Console.WriteLine(e);
                 throw;
             }
-            
         }
 
         public void StopRegulate()
