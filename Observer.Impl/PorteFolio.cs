@@ -16,12 +16,12 @@ namespace Observer.Impl
 
 
 
-        private List<Ownstock> MyOwnStock = new List<Ownstock>();
+        private readonly List<Ownstock> _myOwnStock = new List<Ownstock>();
         public void Update(Subject subject)
         {
             var stock = (IStock) subject;
 
-            foreach (var item in MyOwnStock)
+            foreach (var item in _myOwnStock)
             {
                 if (item.Name.Contains(stock.Navn))
                 {
@@ -41,7 +41,7 @@ namespace Observer.Impl
             get
             {
                 int sum = 0;
-                foreach (var Item in MyOwnStock)
+                foreach (var Item in _myOwnStock)
                 {
                     
                     sum = Item.Value + sum;
@@ -60,7 +60,7 @@ namespace Observer.Impl
             mystock.Amount = amount;
             mystock.Name = stock.Navn;
             mystock.Value = stock.Value;
-           
+            _myOwnStock.Add(mystock);
             
 
         }
