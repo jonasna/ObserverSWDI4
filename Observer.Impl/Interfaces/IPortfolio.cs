@@ -8,7 +8,6 @@ namespace Observer.Impl.Interfaces
 {
     public interface IPortfolio
     {
-        List<Ownstock> MyOwnstocks { get; }
 
         int TotalStockValue { get; }
         
