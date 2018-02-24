@@ -8,6 +8,6 @@ namespace Observer.Impl.Interfaces
 {
     public interface IPortfolioDisplay
     {
-        void Print( IPortfolio portefolie);
+        void Print( List<Ownstock> myStocks);
     }
 }

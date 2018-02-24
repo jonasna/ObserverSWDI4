@@ -9,11 +9,11 @@ namespace Observer.Impl
 {
     public class DefaultRandom : IRandom
     {
-        private int _result { get; }
+        private int Result { get; }
 
         public DefaultRandom(int min, int max)
         {
-            _result = GenerateRandom(min, max);
+            Result = GenerateRandom(min, max);
         }
         public int GenerateRandom(int min, int max)
         {
@@ -23,10 +23,6 @@ namespace Observer.Impl
                 return result;
         }
 
-        public int GetResult
-        {
-            get { return _result; }
-
-        }
+        public int GetResult => Result;
     }
 }
