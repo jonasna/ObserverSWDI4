@@ -11,7 +11,8 @@ namespace Observer.Impl
     public class Stock : Subject, IStock
     {
         private readonly IRegulator _stockRegulator;
-        Stock(string name, int value, IRegulator stockRegulator)
+
+        private Stock(string name, int value, IRegulator stockRegulator)
         {
             Navn = name;
             Value = value;
