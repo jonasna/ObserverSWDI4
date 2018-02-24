@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Observer.Impl
 {
-    public class Class1
+    class IStock
     {
     }
 }
