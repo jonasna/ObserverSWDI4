@@ -29,12 +29,29 @@ namespace Observer.Impl
 
         public void StartRegulate()
         {
-            _stockRegulator.Start();
+            try
+            {
+                _stockRegulator.Start();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
         }
 
         public void StopRegulate()
         {
-            _stockRegulator.Stop();
+            try
+            {
+                _stockRegulator.Stop();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         public void IncreaseValue()
