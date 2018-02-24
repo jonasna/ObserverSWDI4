@@ -22,14 +22,12 @@ namespace Observer.Impl
 
         public void DecreaseValue()
         {
-
             Value = (int)(Value * 0.95);
             Notify();
         }
 
         public void IncreaseValue()
         {
-
             Value = (int)(Value * 1.05);
             Notify();
         }
