@@ -48,6 +48,7 @@
     <Compile Include="Interfaces\IRegulator.cs" />
     <Compile Include="Interfaces\IStock.cs" />
     <Compile Include="Ownstock.cs" />
+    <Compile Include="PortefolieDisplay.cs" />
     <Compile Include="PorteFolio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\Subject.cs" />
