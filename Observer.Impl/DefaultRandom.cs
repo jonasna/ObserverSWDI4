@@ -7,7 +7,7 @@ using Observer.Impl.Interfaces;
 
 namespace Observer.Impl
 {
-    class DefaultRandom : IRandom
+    public class DefaultRandom : IRandom
     {
         public int GenerateRandom(int min, int max)
         {
