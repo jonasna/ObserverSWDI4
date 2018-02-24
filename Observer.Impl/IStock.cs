@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Observer.Impl
 {
-    class IStock
+    public interface IStock
     {
+        string Navn { get; set; }
+        int Value { get; set; }
+        void DecreaseValue();
+        void IncreaseValue();
     }
 }
