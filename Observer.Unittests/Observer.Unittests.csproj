@@ -50,5 +50,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Observer.Impl\Observer.Impl.csproj">
+      <Project>{20cc3ded-f242-48ce-8a2d-3d618f7a26eb}</Project>
+      <Name>Observer.Impl</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
