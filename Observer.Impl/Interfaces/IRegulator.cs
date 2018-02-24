@@ -9,6 +9,5 @@ namespace Observer.Impl.Interfaces
     public interface IRegulator
     {
         void Regulate(object regulateObject);
-        IRandom RandomNumberGenerator { get; }
     }
 }
