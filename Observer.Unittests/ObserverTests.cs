@@ -7,7 +7,10 @@ using NUnit.Framework;
 
 namespace Observer.Unittests
 {
-    public class Class1
+    [TestFixture]
+    public class ObserverUnittests
     {
+
     }
+
 }
