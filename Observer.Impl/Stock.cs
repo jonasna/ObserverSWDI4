@@ -12,7 +12,7 @@ namespace Observer.Impl
     {
         private readonly IRegulator _stockRegulator;
 
-        private Stock(string name, int value, IRegulator stockRegulator)
+        public Stock(string name, int value, IRegulator stockRegulator)
         {
             Navn = name;
             Value = value;

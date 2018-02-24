@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using Observer.Impl;
+using NSubstitute;
+using Observer.Impl.Interfaces;
 
 namespace Observer.Unittests
 {
@@ -14,6 +16,7 @@ namespace Observer.Unittests
         [Test]
         public void StockConstructor_InputArguments_ObjectFieldsMatchArguments()
         {
+            var FakeRegulator = Substitute.For<IRegulator>();
             var uut = new Stock("ABC", 2, FakeRegulator);
         }
     }
