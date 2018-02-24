@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Observer.Impl
+namespace Observer.Impl.Interfaces
 {
-    public interface IPortfolioDisplay
+    public interface IRandom
     {
-        void print( IPortfolio portefolie);
+        int GenerateRandom(int min, int max);
     }
 }
