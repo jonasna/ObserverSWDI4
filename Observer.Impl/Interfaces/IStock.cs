@@ -8,8 +8,8 @@ namespace Observer.Impl.Interfaces
 {
     public interface IStock
     {
-        string Navn { get; set; }
-        int Value { get; set; }
+        string Navn { get; }
+        int Value { get; }
         void DecreaseValue();
         void IncreaseValue();
     }
