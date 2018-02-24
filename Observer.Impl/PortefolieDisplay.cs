@@ -11,8 +11,8 @@ namespace Observer.Impl
     {
         public void Print(PorteFolio myPortefolio)
         {
-            Console.WriteLine("Your portefolie includes the following stocks: ");
-            foreach (var item in myPortefolio)
+            Console.WriteLine("Your portefolio has a total value of: " + myPortefolio.TotalStockValue + " and includes the following stocks: ");
+            foreach (var item in myPortefolio.MyOwnStocks)
             {
                 Console.WriteLine("Name: " + item.Name + "\t Value: " + item.Value + "\t Amount: " + item.Amount );
             }
