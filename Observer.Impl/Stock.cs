@@ -12,11 +12,15 @@ namespace Observer.Impl
     {
         private readonly IRegulator _stockRegulator;
 
-        public Stock(string name, int value, IRegulator stockRegulator)
+        public Stock(string name, int value, IRegulator stockRegulator = null)
         {
             Navn = name;
             Value = value;
-            _stockRegulator = stockRegulator;
+            if (stockRegulator == null)
+            {
+                _stockRegulator = new StockRegulator(new DefaultRandom(1,3), this);
+            }
+            else _stockRegulator = stockRegulator;
         }
         public string Navn { get; }
         public int Value { get; private set; }
