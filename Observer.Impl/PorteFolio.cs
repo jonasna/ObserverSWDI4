@@ -41,7 +41,7 @@ namespace Observer.Impl
              
             }
 
-            _myDisplay.Print(_myOwnStock);
+            _myDisplay.Print(this);
         }
 
         public int TotalStockValue
