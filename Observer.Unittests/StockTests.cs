@@ -57,6 +57,5 @@ namespace Observer.Unittests
             uut.DecreaseValue();
             Assert.That(uut.Value, Is.EqualTo(95));
         }
-
     }
 }
