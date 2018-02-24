@@ -56,10 +56,12 @@ namespace Observer.Impl
 
         public void AddStock(IStock stock, int amount)
         {
-            Ownstock mystock = new Ownstock();
-            mystock.Amount = amount;
-            mystock.Name = stock.Navn;
-            mystock.Value = stock.Value;
+            var mystock = new Ownstock
+            {
+                Amount = amount,
+                Name = stock.Navn,
+                Value = stock.Value
+            };
             _myOwnStock.Add(mystock);
             
 
