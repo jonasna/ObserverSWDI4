@@ -22,7 +22,7 @@ namespace Observer.Impl
             _regulatorThread = new Thread(Regulate);
             _running = false;
         }
-        public void Regulate()
+        private void Regulate()
         {
             do
             {
@@ -30,6 +30,8 @@ namespace Observer.Impl
                     _stock.IncreaseValue();
                 else
                     _stock.DecreaseValue();
+
+                Thread.Sleep(5000);
 
             } while (_running);
         }

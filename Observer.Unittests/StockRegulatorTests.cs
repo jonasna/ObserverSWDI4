@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using NSubstitute;
 using NUnit.Framework;
@@ -14,7 +15,7 @@ namespace Observer.Unittests
     class StockRegulatorTests
     {
         [Test]
-        public void Regulate_RandomNrIsOne_IncreaseValueIsCalled()
+        public void Start_RandomNrIsOne_IncreaseValueIsCalledTwiceIn6Seconds()
         {
             var fakeRandom = Substitute.For<IRandom>();
             fakeRandom.GenerateRandom(1, 3).Returns(1);
@@ -23,14 +24,17 @@ namespace Observer.Unittests
 
             var uut = new StockRegulator(fakeRandom, fakeStock);
 
-            uut.Regulate();
+            // Act
+            uut.Start();
+            Thread.Sleep(6000);
+            uut.Stop();
 
             // Assert
-            fakeStock.Received().IncreaseValue();
+            fakeStock.Received(2).IncreaseValue();
         }
 
         [Test]
-        public void Regulate_RandomNrIsTwo_DecreaseValueIsCalled()
+        public void Stop_RandomNrIsTwo_DecreaseValueIsCalledTwiceIn6Seconds()
         {
             var fakeRandom = Substitute.For<IRandom>();
             fakeRandom.GenerateRandom(1, 3).Returns(2);
@@ -40,10 +44,12 @@ namespace Observer.Unittests
             var uut = new StockRegulator(fakeRandom, fakeStock);
 
             // Act
-            uut.Regulate();
+            uut.Start();
+            Thread.Sleep(6000);
+            uut.Stop();
 
             // Assert
-            fakeStock.Received().DecreaseValue();
+            fakeStock.Received(2).DecreaseValue();
         }
     }
 }
