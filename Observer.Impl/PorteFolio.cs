@@ -18,6 +18,11 @@ namespace Observer.Impl
 
         private readonly List<Ownstock> _myOwnStock = new List<Ownstock>();
         private readonly IPortfolioDisplay _myDisplay;
+
+        public List<Ownstock> MyOwnStocks
+        {
+            get { return _myOwnStock; }
+        }
         public PorteFolio(IPortfolioDisplay Disp)
         {
             _myDisplay = Disp;
