@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Observer.Impl
 {
-    class IPortfolioDisplay
+    public interface IPortfolioDisplay
     {
+        void print( IPortfolio portefolie);
     }
 }

@@ -8,6 +8,6 @@ namespace Observer.Impl
 {
     public interface IObserver
     {
-
+        void Update(Subject subject);
     }
 }
