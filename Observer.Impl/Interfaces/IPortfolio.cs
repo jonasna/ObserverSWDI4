@@ -10,9 +10,9 @@ namespace Observer.Impl.Interfaces
     {
         List<Ownstock> MyOwnstocks { get; set; }
 
-        int totalStockValue { get; set; }
+        int TotalStockValue { get; set; }
         
-        IPortfolioDisplay disp { get; set; }
+        IPortfolioDisplay Disp { get; set; }
 
         void AddStock(IStock stock, int Amount);
 
