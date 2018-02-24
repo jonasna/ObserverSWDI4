@@ -8,6 +8,7 @@ namespace Observer.Impl.Interfaces
 {
     public interface IRegulator
     {
-        void Regulate(object regulateObject);
+        void Start();
+        void Stop();
     }
 }
