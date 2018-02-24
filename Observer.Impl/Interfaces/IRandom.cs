@@ -9,5 +9,6 @@ namespace Observer.Impl.Interfaces
     public interface IRandom
     {
         int GenerateRandom(int min, int max);
+        int GetResult { get; }
     }
 }
