@@ -9,9 +9,9 @@ namespace Observer.Impl
 {
     public class Ownstock
     {
-        public string _name { get; set; }
-        public int _amount { get; set; }
-        public int _value { get; set; }
+        public string _name { get; }
+        public int _amount { get; }
+        public int _value { get; }
 
        
        
