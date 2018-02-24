@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Observer.Impl
+namespace Observer.Unittests
 {
-    public interface IPortfolio
+    public class Class1
     {
-        List<Ownstocks> MyOwnstocks;
-
-     
-
     }
 }
