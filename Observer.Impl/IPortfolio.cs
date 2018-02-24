@@ -14,7 +14,7 @@ namespace Observer.Impl
         
         IPortfolioDisplay disp { get; set; }
 
-        IStock AddStock(IStock stock, int Amount);
+        void AddStock(IStock stock, int Amount);
 
     }
 }
