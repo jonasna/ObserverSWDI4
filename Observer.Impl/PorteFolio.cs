@@ -13,9 +13,6 @@ namespace Observer.Impl
 {
     public class PorteFolio : IObserver, IPortfolio
     {
-
-
-
         private readonly List<Ownstock> _myOwnStock = new List<Ownstock>();
         private readonly IPortfolioDisplay _myDisplay;
 
@@ -23,11 +20,12 @@ namespace Observer.Impl
         {
             get { return _myOwnStock; }
         }
+
         public PorteFolio(IPortfolioDisplay Disp)
         {
             _myDisplay = Disp;
-
         }
+
         public void Update(Subject subject)
         {
             var stock = (IStock) subject;
@@ -38,7 +36,6 @@ namespace Observer.Impl
                 {
                     item.Value = stock.Value;
                 }
-             
             }
 
             _myDisplay.Print(this);
@@ -51,14 +48,10 @@ namespace Observer.Impl
                 int sum = 0;
                 foreach (var Item in _myOwnStock)
                 {
-                    
                     sum = (Item.Value * Item.Amount) + sum;
-                    
                 }
-                
+
                 return sum;
-
-
             }
         }
 
@@ -67,7 +60,8 @@ namespace Observer.Impl
             var subject = (Subject) stock;
             subject.Attach(this);
 
-;           var mystock = new Ownstock
+            ;
+            var mystock = new Ownstock
             {
                 Amount = amount,
                 Name = stock.Navn,
@@ -75,12 +69,6 @@ namespace Observer.Impl
             };
 
             _myOwnStock.Add(mystock);
-            
-
         }
-
-        
     }
-
-    
 }
