@@ -13,28 +13,36 @@ namespace Observer.Impl
         private readonly IRandom _randomNumberGenerator;
         private readonly IStock _stock;
         private readonly Thread _regulatorThread;
+        private bool _running;
 
         public StockRegulator(IRandom randomNumberGenerator, IStock stock)
         {
             _randomNumberGenerator = randomNumberGenerator;
             _stock = stock;
             _regulatorThread = new Thread(Regulate);
+            _running = false;
         }
-        private void Regulate()
+        public void Regulate()
         {
-            if(_randomNumberGenerator.GenerateRandom(1,3) == 1)
-                _stock.IncreaseValue();
-            else
-                _stock.DecreaseValue();
+            do
+            {
+                if (_randomNumberGenerator.GenerateRandom(1, 3) == 1)
+                    _stock.IncreaseValue();
+                else
+                    _stock.DecreaseValue();
+
+            } while (_running);
         }
 
         public void Start()
         {
+            _running = true;
             _regulatorThread.Start();
         }
 
         public void Stop()
         {
+            _running = false;
             _regulatorThread.Abort();
         }
     }
