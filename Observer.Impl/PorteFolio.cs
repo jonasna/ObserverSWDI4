@@ -17,6 +17,12 @@ namespace Observer.Impl
 
 
         private readonly List<Ownstock> _myOwnStock = new List<Ownstock>();
+        private readonly IPortfolioDisplay _myDisplay;
+        public PorteFolio(IPortfolioDisplay Disp)
+        {
+            _myDisplay = Disp;
+
+        }
         public void Update(Subject subject)
         {
             var stock = (IStock) subject;
@@ -27,13 +33,10 @@ namespace Observer.Impl
                 {
                     item.Value = stock.Value;
                 }
-                else
-                {
-                    Console.WriteLine("Stock not in Portefolio");
-                }
-
+             
             }
 
+            _myDisplay.Print(_myOwnStock);
         }
 
         public int TotalStockValue
