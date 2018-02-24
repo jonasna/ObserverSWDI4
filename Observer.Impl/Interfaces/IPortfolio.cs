@@ -8,11 +8,11 @@ namespace Observer.Impl.Interfaces
 {
     public interface IPortfolio
     {
-        List<Ownstock> MyOwnstocks { get; set; }
+        List<Ownstock> MyOwnstocks { get; }
 
-        int totalStockValue { get; set; }
+        int TotalStockValue { get; }
         
-        IPortfolioDisplay disp { get; set; }
+        IPortfolioDisplay Disp { get; }
 
         void AddStock(IStock stock, int Amount);
 
