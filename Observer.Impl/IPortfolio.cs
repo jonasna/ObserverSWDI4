@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Observer.Impl
 {
-    class IPortfolio
+    public interface IPortfolio
     {
+        List<Ownstocks> MyOwnstocks;
+
+     
+
     }
 }
