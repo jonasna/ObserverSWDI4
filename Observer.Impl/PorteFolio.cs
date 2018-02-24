@@ -52,10 +52,10 @@ namespace Observer.Impl
                 foreach (var Item in _myOwnStock)
                 {
                     
-                    sum = Item.Value + sum;
+                    sum = (Item.Value * Item.Amount) + sum;
                     
                 }
-
+                
                 return sum;
 
 
