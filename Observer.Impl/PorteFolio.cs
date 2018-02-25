@@ -16,6 +16,9 @@ namespace Observer.Impl
         private readonly List<Ownstock> _myOwnStock = new List<Ownstock>();
         private readonly IPortfolioDisplay _myDisplay;
 
+        /*
+         A public get to return the portefolio for the display
+         */
         public List<Ownstock> MyOwnStocks
         {
             get { return _myOwnStock; }
@@ -26,6 +29,9 @@ namespace Observer.Impl
             _myDisplay = disp;
         }
 
+        /*
+         Update method to update each stock in the PorteFolio
+         */
         public void Update(Subject subject)
         {
             var stock = (IStock) subject;
@@ -41,6 +47,10 @@ namespace Observer.Impl
             _myDisplay.Print(this);
         }
 
+        /*
+         returns the sum of the stock Value times the amount
+         to represent the correct worth of the PorteFolio
+         */
         public int TotalStockValue
         {
             get
@@ -55,6 +65,10 @@ namespace Observer.Impl
             }
         }
 
+        /*
+         when a Stock is added to the portefolio it attaches to the given stock
+         to be notified for any given changes for that stock
+         */
         public void AddStock(IStock stock, int amount)
         {
             var subject = (Subject) stock;
