@@ -8,6 +8,8 @@ using Observer.Impl;
 using NSubstitute;
 using Observer.Impl.Interfaces;
 
+// Fakes are generated through NSubstitute.
+
 namespace Observer.Unittests
 {
     [TestFixture]
@@ -29,6 +31,15 @@ namespace Observer.Unittests
             var uut = new Stock("ABC", 2, fakeRegulator);
             uut.StartRegulate();
             fakeRegulator.Received().Start();
+        }
+
+        [Test]
+        public void StockConstructor_InputArguments_NoRegulatorPassed_ValuesAreSet()
+        {
+            var uut = new Stock("ABC", 2);
+            uut.StartRegulate();
+            Assert.That(uut.Value, Is.EqualTo(2));
+            Assert.That(uut.Navn, Is.EqualTo("ABC"));
         }
 
         [Test]

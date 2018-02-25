@@ -14,11 +14,10 @@ namespace Observer.Application
         {
             var display = new PortefolieDisplay();
             var portfolio = new PorteFolio(display);
-
             var AppleStock = new Stock("Apple", 100);
             var GoogleStock = new Stock("Google", 2000);
 
-            portfolio.AddStock(AppleStock, 1);
+            portfolio.AddStock(AppleStock, 15);
             portfolio.AddStock(GoogleStock, 1000);
 
             AppleStock.StartRegulate();
@@ -26,7 +25,7 @@ namespace Observer.Application
 
             while (true)
             {
-                Thread.Sleep(5000);
+                Thread.Sleep(4000);
             }
         }
     }
