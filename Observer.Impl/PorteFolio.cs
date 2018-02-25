@@ -21,9 +21,9 @@ namespace Observer.Impl
             get { return _myOwnStock; }
         }
 
-        public PorteFolio(IPortfolioDisplay Disp)
+        public PorteFolio(IPortfolioDisplay disp)
         {
-            _myDisplay = Disp;
+            _myDisplay = disp;
         }
 
         public void Update(Subject subject)
