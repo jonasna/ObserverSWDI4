@@ -25,7 +25,7 @@ namespace Observer.Application
 
             while (true)
             {
-                Thread.Sleep(4000);
+                Thread.Sleep(5000);
             }
         }
     }
